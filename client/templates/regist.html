@@ -1,0 +1,175 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!-- set active nav link -->
+{% block regist %} active {% endblock %}
+
+{% block content %}
+		<!-- banner -->
+		<div class="banner_w3lspvt-2">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="index.html" class="font-weight-bold">Home</a></li>
+				<li class="breadcrumb-item" aria-current="page">Contact Us</li>
+			</ol>
+		</div>
+		<!-- //banner -->
+	</div>
+	<!-- //main banner -->
+
+	<!-- contact -->
+	<div class="contact py-5" id="contact">
+		<div class="container pb-xl-5 pb-lg-3">
+			<div class="row">
+				<div class="col-lg-6">
+					<img src="{% static 'images/b2.png' %}" alt="image" class="img-fluid" />
+				</div>
+				<div class="col-lg-6 mt-lg-0 mt-5">
+					<!-- contact form grid -->
+					<div class="contact-top1">
+						<form action="" class="contact-wthree-do" method="POST">
+							{% csrf_token %}
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-6">
+										<label>
+											Nome
+										</label>
+										{{ form.firstname }}
+									</div>
+									<div class="col-md-6 mt-md-0 mt-4">
+										<label>
+											Sobrenome
+										</label>
+										{{ form.lastname }}
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-6">
+										<label>
+											Telefone
+										</label>
+										<input class="form-control" type="text" placeholder="xxx xxx xxx" name="mobile" required="required">
+									</div>
+									<div class="col-md-6 mt-md-0 mt-4">
+										<label>
+											Email
+										</label>
+										{{ form.email }}
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-6">
+										<label>
+											Grupo sanguíneo
+										</label>
+										<div>
+											<select class="form-control" style="height: 50px;" name="group">
+												<option value="A+">A+</option>
+												<option value="AB+">AB+</option>
+												<option value="B+">B+</option>
+												<option value="O+">O+</option>
+												<option value="A-">A-</option>
+												<option value="AB-">AB-</option>
+												<option value="B-">B-</option>
+												<option value="O-">O-</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-md-6 mt-md-0 mt-4">
+										<label>
+											Morada
+										</label>
+										<input class="form-control" type="text" placeholder="Bairro 4 de Abril" name="morada" required="">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-6">
+										<label>
+											Provincia
+										</label>
+										<div>
+											<select class="form-control" style="height: 50px;" name="group">
+												<option value="A+">A+</option>
+												<option value="AB+">AB+</option>
+												<option value="B+">B+</option>
+												<option value="O+">O+</option>
+												<option value="A-">A-</option>
+												<option value="AB-">AB-</option>
+												<option value="B-">B-</option>
+												<option value="O-">O-</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-md-6 mt-md-0 mt-4">
+										<label>
+											Municipio
+										</label>
+										<input class="form-control" type="text" placeholder="Bairro 4 de Abril" name="morada" required="">
+									</div>
+								</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-6">
+										<label>
+											Login
+										</label>
+										{{ form.username }}
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="row">
+									<div class="col-md-6">
+										<label>
+											Senha
+										</label>
+										{{ form.password1 }}
+									</div>
+									<div class="col-md-6 mt-md-0 mt-4">
+										<label>
+											Repita a senha
+										</label>
+										{{ form.password2 }}
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group esconde">
+								<div class="row">
+									<div class="col-md-12">
+										<label>
+											Sua messagem
+										</label>
+										<textarea placeholder="Adiciona aqui a sua mensagem (opcional)" name="message" class="form-control"></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="row mt-3">
+								<div class="col-md-12">
+									<button type="submit" class="btn btn-cont-w3 btn-block mt-4">Cadastrar</button>
+								</div>
+							</div>
+							<span class="alert alert-danger">
+								{{ form.errors}}
+							</span>
+						</form>
+					</div>
+					<!-- //contact form grid ends here -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //contact-->
+
+	<!-- map -->
+	<div class="w3l-map p-4">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15884.238541873303!2d12.184443215040753!3d-5.558179510174569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1shospitais%20cabinda!5e0!3m2!1sen!2sin!4v1614417047783!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+	</div>
+	<!-- //map -->
+{% endblock %}

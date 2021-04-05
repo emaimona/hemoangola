@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+<!-- set active nav link -->
+{% block find %} active {% endblock %}
+
+{% block content %}
+
+		<!-- banner -->
+		<div class="banner_w3lspvt-2">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="index.html" class="font-weight-bold">Home</a></li>
+				<li class="breadcrumb-item" aria-current="page">Doadores</li>
+			</ol>
+		</div>
+		<!-- //banner -->
+	</div>
+	<!-- //main banner -->
+
+	<!-- price -->
+	<div class="price-sec py-5">
+		<div class="container py-xl-5 py-lg-3">
+			<div class="inner_sec_info_w3_info mt-3">
+				<div class="row price-grid-main">
+
+						<!-- find -->
+						{% for i in d %}	
+							<div class="row m-auto ">
+									<div class="col-md-auto">
+									<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+										<div class="col p-4 d-flex flex-column position-static">
+											<strong class="d-inline-block mb-2 text-primary">{{ i.name }}</strong>
+											<h3 class="mb-0 text-right badge-secondary">{{ i.group}}</h3>
+											<div class="mb-1 text-muted">Nov 12</div>
+											<p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+											<a href="#" class="stretched-link">Continue reading</a>
+										</div>
+									</div>
+									</div>
+							</div>
+					 		{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //find -->
+
+	{% endblock %}

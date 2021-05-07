@@ -72,10 +72,10 @@ E-mail: emanuelmaimona.com
 								</li>
 								<li><a href="{% url 'url_about' %}" class="{% block about %} {% endblock %}" >Sobre</a></li>
 								
-								{% if user.is_authenticated %}
-									<li><a href="{% url 'url_logout' %}" class="">Terminar sessao</a></li>
+								{% if user.username %}
+									<li><a href="{% url 'url_logout' %}" class="">Terminar sessao {{ user.username }}</a></li>
 								{% else %}
-									<li><a href="{% url 'url_login' %}" class="text-info">Iniciar sessao</a></li>
+									<li><a href="{% url 'url_login' %}" class="text-info">Iniciar sessao {{ user.username }}</a></li>
 								{% endif %}
 
 							</ul>

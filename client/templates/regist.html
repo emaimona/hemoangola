@@ -16,6 +16,36 @@
 	</div>
 	<!-- //main banner -->
 
+	<select id='sel' class="" style="height: 50px;" name="groupx" onchange="change()">
+	{% for t in data.fill_m %}
+		<option value="{{ t.name }}">{{ t.name }}</option>
+	{% endfor %}
+	</select>
+
+	<span id="json" class="esconde">{{ data.fill_m}}</span>
+	<select id='sel' class="" style="height: 50px;" name="groupx" >
+		<option value=""></option>
+		</select>
+	
+	<script>
+		function change(){
+			const t = document.getElementById('sel')
+			const l = document.getElementById('json').innerText
+			alert(l.)
+			for(let v in l) {
+				t.value = 'Default'+l;
+			}
+			  
+			
+			
+		}
+	</script>
+
+	{% for t in data.fill_m %}
+		{% if t.name == 'Cabinda' %}
+			{{ t.cities }}
+		{% endif %}
+	{% endfor %}
 	<!-- contact -->
 	<div class="contact py-5" id="contact">
 		<div class="container pb-xl-5 pb-lg-3">
@@ -30,17 +60,11 @@
 							{% csrf_token %}
 							<div class="form-group">
 								<div class="row">
-									<div class="col-md-6">
+									<div class="col-md-12">
 										<label>
 											Nome
 										</label>
-										{{ form.firstname }}
-									</div>
-									<div class="col-md-6 mt-md-0 mt-4">
-										<label>
-											Sobrenome
-										</label>
-										{{ form.lastname }}
+										{{ form.name }}
 									</div>
 								</div>
 							</div>
@@ -50,7 +74,7 @@
 										<label>
 											Telefone
 										</label>
-										<input class="form-control" type="text" placeholder="xxx xxx xxx" name="mobile" required="required">
+										{{ form.phone }}
 									</div>
 									<div class="col-md-6 mt-md-0 mt-4">
 										<label>
@@ -67,7 +91,7 @@
 											Grupo sanguíneo
 										</label>
 										<div>
-											<select class="form-control" style="height: 50px;" name="group">
+											<select id='id_group' class="form-control" style="height: 50px;" name="group">
 												<option value="A+">A+</option>
 												<option value="AB+">AB+</option>
 												<option value="B+">B+</option>
@@ -83,7 +107,7 @@
 										<label>
 											Morada
 										</label>
-										<input class="form-control" type="text" placeholder="Bairro 4 de Abril" name="morada" required="">
+										{{ form.district }}
 									</div>
 								</div>
 							</div>
@@ -94,23 +118,16 @@
 											Provincia
 										</label>
 										<div>
-											<select class="form-control" style="height: 50px;" name="group">
-												<option value="A+">A+</option>
-												<option value="AB+">AB+</option>
-												<option value="B+">B+</option>
-												<option value="O+">O+</option>
-												<option value="A-">A-</option>
-												<option value="AB-">AB-</option>
-												<option value="B-">B-</option>
-												<option value="O-">O-</option>
-											</select>
+											{{ form.province }}
 										</div>
 									</div>
 									<div class="col-md-6 mt-md-0 mt-4">
 										<label>
 											Municipio
 										</label>
-										<input class="form-control" type="text" placeholder="Bairro 4 de Abril" name="morada" required="">
+										<div>
+											{{ form.municipe }}											
+										</div>
 									</div>
 								</div>
 							<div class="form-group">
@@ -129,13 +146,13 @@
 										<label>
 											Senha
 										</label>
-										{{ form.password1 }}
+										{{ form.password }}
 									</div>
 									<div class="col-md-6 mt-md-0 mt-4">
 										<label>
 											Repita a senha
 										</label>
-										{{ form.password2 }}
+										{{ form.password }}
 									</div>
 								</div>
 							</div>
@@ -156,7 +173,7 @@
 								</div>
 							</div>
 							<span class="alert alert-danger">
-								{{ form.errors}}
+								{{ form.errors }}
 							</span>
 						</form>
 					</div>

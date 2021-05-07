@@ -25,5 +25,6 @@ urlpatterns = [
     path('regist/', regist, name='url_regist'),
     path('404/', v404, name='url_v404'),
     path('login/', login_user, name='url_login'),
-    path('login/', logout_user, name='url_logout'),
+    path('logout/', logout_user, name='url_logout'),
 ]
+

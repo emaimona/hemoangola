@@ -50,7 +50,7 @@
     ]
   },
   {
-    "name": "Cuanza Nord",
+    "name": "Cuanza Norte",
     "cities": [
       "Ambaca",
       "Bula Atumba",
@@ -68,7 +68,7 @@
     ]
   },
   {
-    "name": "Cuanza Sud",
+    "name": "Cuanza Sul",
     "cities": [
       "Amboim",
       "Cassongue",
@@ -130,7 +130,7 @@
     ]
   },
   {
-    "name": "Lunda Nord",
+    "name": "Lunda Norte",
     "cities": [
       "Cambulo",
       "Chitato",
@@ -144,7 +144,7 @@
       "Xa Muteba"
     ]
   },
-  { "name": "Lunda Sud", "cities": ["Cacolo", "Dala", "Muconda", "Saurimo"] },
+  { "name": "Lunda Sul", "cities": ["Cacolo", "Dala", "Muconda", "Saurimo"] },
   {
     "name": "Luanda",
     "cities": [

@@ -10,14 +10,6 @@ class CreateUserForm(UserCreationForm):
         'placeholder': 'ex.: vemba', 'class':'form-control', 'name':'username'
     }))
 
-    firstname = forms.CharField(required=True, widget=forms.TextInput(attrs={
-        'placeholder': 'Alfredo Combo', 'class':'form-control', 'name':'firstname'
-    }))
-
-    lastname = forms.CharField(required=True, widget=forms.TextInput(attrs={
-        'placeholder': 'Nvemba', 'class':'form-control', 'name':'lastname'
-    }))
-
     email = forms.EmailField(required=True, widget=forms.EmailInput(attrs={
         'placeholder': 'exemplo@mail.com', 'class':'form-control', 'name':'email'
     }))
@@ -32,4 +24,37 @@ class CreateUserForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'firstname', 'lastname', 'password1', 'password2']
+        fields = ['username', 'email', 'password1', 'password2']
+
+class DonorForm(forms.ModelForm):
+    name = forms.CharField(required=True, widget=forms.TextInput(attrs={
+        'placeholder': 'ex.: Alfredo Vemba', 'class':'form-control', 'name':'name'
+    }))
+    
+    phone = forms.CharField(required=True, widget=forms.TextInput(attrs={
+        'placeholder': 'ex.: 942738273', 'class':'form-control', 'name':'phone'
+    }))
+
+    email = forms.EmailField(required=True, widget=forms.EmailInput(attrs={
+        'placeholder': 'exemplo@mail.com', 'class':'form-control', 'name':'email'
+    }))
+    
+    municipe = forms.CharField(required=True, widget=forms.TextInput(attrs={
+        'placeholder': 'ex.: Alfredo Vemba', 'class':'form-control', 'name':'municipe'
+    }))
+    
+    district = forms.CharField(required=True, widget=forms.TextInput(attrs={
+        'placeholder': 'ex.: 1 de Maio', 'class':'form-control', 'name':'district'
+    }))
+    
+    username = forms.CharField(required=True, widget=forms.TextInput(attrs={
+        'placeholder': 'ex.: vemba', 'class':'form-control', 'name':'username'
+    }))
+
+    password = forms.CharField(required=True, widget=forms.PasswordInput(attrs={
+        'placeholder': '6 ou mais digitos', 'class':'form-control', 'name':'password', 'minlength':3
+    }))
+
+    class Meta:
+        model = Donor
+        fields = ('name', 'phone', 'email', 'group', 'province', 'municipe', 'district', 'username', 'password')

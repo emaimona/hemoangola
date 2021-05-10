@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = ['hemoangola.herokuapp.com', 'localhost:8000']
+ALLOWED_HOSTS = ['zolina.herokuapp.com', 'localhost:8000']
 
 
 # Application definition
